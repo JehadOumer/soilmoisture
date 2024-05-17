@@ -48,4 +48,8 @@ To run the project, use the `run_project.sh` script, which simplifies the proces
 - `dummy_sensor_data.json`: Example JSON file with generated dummy data.
 - `run_project.sh`: Shell script to run the project with specified parameters.
 
+### Datashets
+- [Soil Moisture Sensor Datasheet](https://components101.com/modules/soil-moisture-sensor-module)
+- [Relay Switch Datasheet](https://roboticafacil.es/datasheets/ky-019.pdf)
+
 This project integrates hardware and software components to provide a soil moisture monitoring demo, accessible via a user-friendly web interface.
