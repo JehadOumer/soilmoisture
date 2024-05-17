@@ -9,7 +9,7 @@ This project aims to monitor soil moisture levels to ensure optimal plant wateri
 - **Red, Yellow, Green LEDs**: 1 unit each
 - **Piezo Buzzer**: 1 unit
 - **Resistors (100 Ohms)**: 4 units
-- **Relay Switch (SRD-05VDC-SL-C)**: 1 unit
+- **Relay Switch (KEYES 5V Relay Module KY-019)**: 1 unit
 - **Breadboard**: 1 unit
 - **Jumper Wires**: Several
 
