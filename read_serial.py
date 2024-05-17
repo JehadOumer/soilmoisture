@@ -8,8 +8,8 @@ def find_arduino(vid_pid_tuple):
     ports = list_ports.comports()
     #print(ports)
     for port in ports:
-        if port.vid is not None and port.pid is not None:
-            if (port.vid, port.pid) == vid_pid_tuple:
+        if port.vid is not None and port.pid is not None: 
+            if (port.vid, port.pid) == vid_pid_tuple: ##find port connected with arduino
                 return port.device
     return None
 

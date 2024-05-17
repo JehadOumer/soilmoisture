@@ -5,9 +5,11 @@ import sys
 
 app = Flask(__name__)
 
-# Command line argument for the JSON file, default to 'dummy_sensor_data.json'
+# Command line argument for the JSON file, default to 'dummy_sensor_data.json', sensor_data.json for live sessions
 json_file = sys.argv[1] if len(sys.argv) > 1 else 'dummy_sensor_data.json'
 
+
+###parsing semi-json file to be json
 def load_json_data(file_path):
     try:
         with open(file_path, 'r') as file:
