@@ -16,7 +16,6 @@ const int cycleDelay = 1000;         // Delay before the next cycle starts
 int sumMoisture = 0;
 int numReadings = 0;
 
-// Setup routine runs once when you press reset
 void setup() {
   Serial.begin(9600);
   pinMode(relayPin, OUTPUT);
@@ -35,7 +34,7 @@ void updateIndicators(String category) {
   
   if (category == "Very Dry") {
     digitalWrite(redLED, HIGH);
-    digitalWrite(buzzerPin, HIGH); // Activate buzzer for Very Dry
+    digitalWrite(buzzerPin, HIGH); // Activate buzzer for Very Dry only
   } else if (category == "Dry") {
     digitalWrite(yellowLED, HIGH);
   } else if (category == "Humid") {
@@ -43,11 +42,10 @@ void updateIndicators(String category) {
   }
 }
 
-// Loop routine runs over and over again forever
 void loop() {
   digitalWrite(relayPin, HIGH);
   Serial.println("Relay activated");
-  delay(stabilizationDelay); // Allow sensor to stabilize
+  delay(stabilizationDelay); // Allow sensor to stabilize when powered
 
   sumMoisture = 0;
   numReadings = 0;
@@ -59,21 +57,21 @@ void loop() {
     numReadings++;
     Serial.print("Sensor reading: ");
     Serial.println(sensorValue);
-    delay(readingInterval); // Delay between readings
+    delay(readingInterval); // Delay between readings, for sampling purposes
   }
 
   int average = sumMoisture / numReadings;
   digitalWrite(relayPin, LOW);
 
-  // Determine the category and relative moisture value
+  // Determine the category and moisture value
   String category;
-  float relativeMoisture = map(average, 0, 1023, 100, 0) / 100.0; // Convert to a range from 0.00 to 1.00
-  if (relativeMoisture > 0.66) {
+  float relativeMoisture = map(average, 0, 1023, 100, 0) / 100.0; // Convert to sensor range from 1.00 to 0.00, where low levels mean high humidity
+  if (relativeMoisture > 0.66) { //equal divison 0.33
     category = "Humid";
   } else if (relativeMoisture > 0.33) {
-    category = "Dry";
+    category = "Dry";//equal divison 0.33
   } else {
-    category = "Very Dry";
+    category = "Very Dry";//equal divison 0.33
   }
 
   updateIndicators(category);
