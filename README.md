@@ -33,7 +33,7 @@ To run the project, use the `run_project.sh` script, which simplifies the proces
     ```
 
 ### Command Line Arguments
-- `--data_source`: Specifies the JSON file to use as the data source (default: `dummy_sensor_data.json`).
+- `--data_source`: Specifies the JSON file to use as the data source (default: `dummy_sensor_data.json`),  `sensor_data.json` is the file used for live experiments with the sensor
 - `--mode`: Specifies the mode of operation (`live` for real-time data from the sensor or `offline` to use pre-recorded data).
 
 ### Description of Files
@@ -44,7 +44,7 @@ To run the project, use the `run_project.sh` script, which simplifies the proces
 - `index.html`: HTML file for the web dashboard interface.
 - `charts.js`: JavaScript file for rendering charts on the web dashboard.
 - `styles.css`: CSS file for styling the web interface.
-- `sensor_data.json`: Example JSON file containing actual sensor data.
+- `sensor_data.json`: JSON file containing actual sensor data.
 - `dummy_sensor_data.json`: Example JSON file with generated dummy data.
 - `run_project.sh`: Shell script to run the project with specified parameters.
 
