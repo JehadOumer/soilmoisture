@@ -1,0 +1,55 @@
+body {
+    background-color: #f4f4f4;
+}
+
+.current-value {
+    background-color: #e9ecef;
+    border-color: #ddd;
+}
+
+.chart-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 400px !important;
+}
+
+.custom-range input[type="date"],
+.custom-range button {
+    margin: 5px;
+}
+
+.custom-range .input-group {
+    justify-content: center;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.text-danger {
+    color: #dc3545; /* Bootstrap danger color for 'Very Dry' */
+}
+
+.text-warning {
+    color: #ffc107; /* Bootstrap warning color for 'Dry' */
+}
+
+.text-success {
+    color: #28a745; /* Bootstrap success color for 'Humid' */
+}
+
+@media (max-width: 768px) {
+    .custom-range,
+    .chart-container {
+        padding: 10px;
+    }
+}

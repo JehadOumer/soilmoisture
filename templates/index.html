@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Data Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div id="currentValue" class="current-value alert alert-info p-3 mb-4">
+            <strong>Latest Reading:</strong> <span id="latestValue"></span>
+            <div class="small">Latest value is updated after each time the sensor takes a reading. Check parameters for more information about sampling scheduling.</div>
+        </div>
+        <div class="chart-container">
+            <h2 class="text-center mb-3">Today's Plot</h2>
+            <canvas id="todayPlot"></canvas>
+        </div>
+        <div class="chart-container mt-4">
+            <h2 class="text-center mb-3">Last 7 Days Plot</h2>
+            <canvas id="last7DaysPlot"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2 class="text-center mb-3">Custom Plot Range</h2>
+            <div class="input-group">
+                <input type="date" id="startDate" class="form-control">
+                <input type="date" id="endDate" class="form-control">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" onclick="fetchCustomRangeData()">Submit</button>
+                </div>
+            </div>
+            <canvas id="customPlot"></canvas>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+</body>
+</html>
