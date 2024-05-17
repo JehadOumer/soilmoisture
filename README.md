@@ -5,7 +5,7 @@ This project aims to monitor soil moisture levels to ensure optimal plant wateri
 
 ## Components Used
 - **Arduino Uno (ATmega328P)**: 1 unit
-- **Soil Moisture Sensor (YL-69)**: 1 unit
+- **Soil Moisture Sensor (mh sensor series soil moisture)**: 1 unit
 - **Red, Yellow, Green LEDs**: 1 unit each
 - **Piezo Buzzer**: 1 unit
 - **Resistors (100 Ohms)**: 4 units
